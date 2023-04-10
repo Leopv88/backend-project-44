@@ -7,4 +7,5 @@ run:  #запуск программы brain-games
 publish:
 	npm publish --dry-run
 
-.PHONY: test
+lint:
+	npx eslint .
