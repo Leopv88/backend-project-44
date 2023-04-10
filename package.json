@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "bin": {
     "brain-games": "bin/brain-games.js"
-  },  
+  },
   "type": "module",
   "description": "[![Actions Status](https://github.com/Leopv88/backend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/Leopv88/backend-project-44/actions)",
   "main": "index.js",
@@ -19,6 +19,7 @@
     "prettier": "^2.8.7"
   },
   "dependencies": {
-    "make": "^0.8.1"
+    "make": "^0.0.0",
+    "readline-sync": "^1.4.10"
   }
 }
