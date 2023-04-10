@@ -1,18 +1,24 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },  
   "type": "module",
   "description": "[![Actions Status](https://github.com/Leopv88/backend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/Leopv88/backend-project-44/actions)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Leonid",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.38.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.27.5",
     "prettier": "^2.8.7"
+  },
+  "dependencies": {
+    "make": "^0.8.1"
   }
 }
