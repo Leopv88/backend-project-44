@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { request, parityCheck } from '../src/game.js';
+import { request, parityCheck } from '../src/index.js';
 
 console.log('Welcome to the Brain Games!');
 const name = request('May I have your name?');
