@@ -51,6 +51,17 @@ const greatestCD = (num1, num2) => {
   return result;
 };
 
+const progression = (firstNumber, lenght, step) => {
+  const array = [];
+  array[0] = firstNumber;
+  for (let i = 1; i < lenght; i += 1) {
+    array[i] = array[i - 1] + step;
+  }
+  return array;
+};
+
+const randomNumber = (min, max) => Math.round(Math.random() * (max - min) + min);
+
 export {
-  request, parityCheck, calc, hello, wrongAnswer, greatestCD,
+  request, parityCheck, calc, hello, wrongAnswer, greatestCD, progression, randomNumber,
 };
