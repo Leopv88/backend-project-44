@@ -62,6 +62,16 @@ const progression = (firstNumber, lenght, step) => {
 
 const randomNumber = (min, max) => Math.round(Math.random() * (max - min) + min);
 
+const simpleNumber = (num) => {
+  for (let i = (num - 1); i > 1; i -= 1) {
+    if (num % i === 0) {
+      return 'no';
+    }
+  }
+  return 'yes';
+};
+
 export {
   request, parityCheck, calc, hello, wrongAnswer, greatestCD, progression, randomNumber,
+  simpleNumber,
 };
