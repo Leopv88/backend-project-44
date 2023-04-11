@@ -32,6 +32,25 @@ const wrongAnswer = (wrong, correct, name) => {
   console.log(`Let's try again, ${name}!`);
 };
 
+const greatestCD = (num1, num2) => {
+  let min = 0;
+  let max = 0;
+  if (num1 > num2) {
+    max = num1;
+    min = num2;
+  } else if (num1 < num2) {
+    max = num2;
+    min = num1;
+  } else {
+    return num1;
+  }
+  let result = min;
+  while ((max % result !== 0) || (min % result !== 0)) {
+    result -= 1;
+  }
+  return result;
+};
+
 export {
-  request, parityCheck, calc, hello, wrongAnswer,
+  request, parityCheck, calc, hello, wrongAnswer, greatestCD,
 };
