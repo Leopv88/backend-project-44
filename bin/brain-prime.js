@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import {
   hello, request, wrongAnswer, randomNumber, simpleNumber,
-} from '../src/index.js';
+} from '../src/games/index.js';
 
 const name = hello();
 const minNumber = 1; // минимальное число

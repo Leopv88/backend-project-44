@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { request, parityCheck, hello } from '../src/index.js';
+import { request, parityCheck, hello } from '../src/games/index.js';
 
 const name = hello();
 let finish = true;

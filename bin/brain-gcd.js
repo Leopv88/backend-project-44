@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import {
   hello, request, wrongAnswer, greatestCD,
-} from '../src/index.js';
+} from '../src/games/index.js';
 
 const name = hello();
 const maxNumber = 10; // Максимальное число для вычисления

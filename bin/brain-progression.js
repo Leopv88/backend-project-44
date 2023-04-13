@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import {
   hello, request, wrongAnswer, progression, randomNumber,
-} from '../src/index.js';
+} from '../src/games/index.js';
 
 const name = hello();
 const maxNumber = 10; // максимальное начальное значение последовательности
