@@ -45,7 +45,7 @@ const greatestCD = (num1, num2) => {
     return num1;
   }
   if (num1 === 0 || num2 === 0) {
-    return 0;
+    return max;
   }
   let result = min;
   while ((max % result !== 0) || (min % result !== 0)) {
