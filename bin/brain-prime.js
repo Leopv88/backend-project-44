@@ -4,13 +4,14 @@ import {
 } from '../src/index.js';
 
 const name = hello();
+const minNumber = 1; // минимальное число
 const maxNumber = 100; // максимальное число
 
-console.log('Welcome to the Brain Games!');
+console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 let finish = true;
 
 for (let i = 1; i <= 3; i += 1) {
-  const num = randomNumber(1, maxNumber);
+  const num = randomNumber(minNumber, maxNumber);
   console.log(`Question: ${num}`); // вопрос пользователю
   const answer = request('Your answer: '); // запрос ответа
 
