@@ -10,7 +10,7 @@ console.log('Find the greatest common divisor of given numbers.');
 let finish = true;
 
 for (let i = 1; i <= 3; i += 1) {
-  const num1 = Math.round(Math.random() * maxNumber); // получаем случайное число num1
+  const num1 = 0;//Math.round(Math.random() * maxNumber); // получаем случайное число num1
   const num2 = Math.round(Math.random() * maxNumber); // получаем случайное число num2
   console.log(`Question: ${num1} ${num2}`); // вопрос пользователю
   const answer = request('Your answer: '); // запрос ответа

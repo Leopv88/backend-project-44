@@ -22,7 +22,7 @@ const calc = (num1, num2, operator) => {
 
 const hello = () => {
   console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May I have your name?');
+  const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   return name;
 };
@@ -44,10 +44,14 @@ const greatestCD = (num1, num2) => {
   } else {
     return num1;
   }
+  if (num1 === 0 || num2 === 0) {
+    return 0;
+  }
   let result = min;
   while ((max % result !== 0) || (min % result !== 0)) {
     result -= 1;
   }
+  console.log(`result after while ${result}`)
   return result;
 };
 
