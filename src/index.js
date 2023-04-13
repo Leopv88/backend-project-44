@@ -51,7 +51,7 @@ const greatestCD = (num1, num2) => {
   while ((max % result !== 0) || (min % result !== 0)) {
     result -= 1;
   }
-  console.log(`result after while ${result}`)
+  console.log(`result after while ${result}`);
   return result;
 };
 
