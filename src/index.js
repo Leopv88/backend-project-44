@@ -22,8 +22,8 @@ const calc = (num1, num2, operator) => {
 
 const hello = () => {
   console.log('Welcome to the Brain Games!');
-  const name = request('May I have your name?');
-  console.log(`Hello, ${name}!`);
+  const name = readlineSync.question('May I have your name?');
+  console.log(`Hello,  ${name}!`);
   return name;
 };
 
