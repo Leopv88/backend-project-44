@@ -10,7 +10,7 @@ const maxLengthArray = 10; // максимальная длинна послед
 const minStep = 1; // минимальный шаг последовательности
 const maxStep = 5; // максимальный шаг последовательности
 let firstNumber = 0;
-let lenght = 0; 
+let lenght = 0;
 let step = 0;
 console.log('What number is missing in the progression?');
 let finish = true;
