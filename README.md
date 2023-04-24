@@ -12,21 +12,33 @@ Project backend-project-44. 5 games to test your math and logic skills
 make install
 ```
 
-### Run games
-
-### Game: "Even parity check"
+## Game: "Even parity check"
+### Run game: 
+```bash
 brain-even
-### Game: "Calc"
+```
+[![asciicast](https://asciinema.org/a/y8FN8ULHE16FAlLyFeErZVRiU.svg)](https://asciinema.org/a/y8FN8ULHE16FAlLyFeErZVRiU)
+## Game: "Calc"
+### Run game: 
+```bash
 brain-calc 
-### Game "Greatest common factor"
+```
+[![asciicast](https://asciinema.org/a/BlbsQPdRG3z1w0OcTp2XxTpje.svg)](https://asciinema.org/a/BlbsQPdRG3z1w0OcTp2XxTpje)
+## Game "Greatest common factor"
+### Run game: 
+```bash
 brain-gcd
-### Game "Arithmetic progression"
+```
+[![asciicast](https://asciinema.org/a/M2qkCgBnbNb16lvkjePQr9r05.svg)](https://asciinema.org/a/M2qkCgBnbNb16lvkjePQr9r05)
+## Game "Arithmetic progression"
+### Run game: 
+```bash
 brain-progression
-### Game "Prime number"
+```
+[![asciicast](https://asciinema.org/a/66wZolI44Mojwtav6AiNJokfh.svg)](https://asciinema.org/a/66wZolI44Mojwtav6AiNJokfh)
+## Game "Prime number"
+### Run game: 
+```bash
 brain-prime
-
-[### Asciinema brain-even](https://asciinema.org/a/y8FN8ULHE16FAlLyFeErZVRiU)
-[### Asciinema brain-calc](https://asciinema.org/a/BlbsQPdRG3z1w0OcTp2XxTpje)
-[### Asciinema brain-gcd](https://asciinema.org/a/M2qkCgBnbNb16lvkjePQr9r05)
-[### Asciinema brain-progression](https://asciinema.org/a/66wZolI44Mojwtav6AiNJokfh)
-[### Asciinema brain-prime](https://asciinema.org/a/HwL4XJ2H5gYvmGPQ4BqLrphKP)
+```
+[![asciicast](https://asciinema.org/a/HwL4XJ2H5gYvmGPQ4BqLrphKP.svg)](https://asciinema.org/a/HwL4XJ2H5gYvmGPQ4BqLrphKP)
