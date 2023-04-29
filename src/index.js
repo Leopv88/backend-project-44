@@ -12,11 +12,11 @@ const startGame = (gameQuestion, gameInfo) => {
 
   for (let i = 0; i < numberQuestion(); i += 1) {
     const questionGame = gameInfo[i][0];
-    const rigthAnswer = gameInfo[i][1];
+    const rigthAnswer = String(gameInfo[i][1]);
     console.log(`Question: ${questionGame}`);
     const answer = readlineSync.question('Your answer: ');
 
-    if (answer !== String(rigthAnswer)) {
+    if (answer !== rigthAnswer) {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rigthAnswer}'.`);
       console.log(`Let's try again, ${userName}!`);
       return;
