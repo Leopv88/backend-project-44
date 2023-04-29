@@ -1,6 +1,4 @@
-import startGame from '../index.js';
-
-const randomNumber = (min, max) => Math.round(Math.random() * (max - min) + min);
+import { startGame, numberQuestion, randomNumber } from '../index.js';
 
 const simpleNumber = (num) => {
   for (let i = (num - 1); i > 1; i -= 1) {
@@ -14,15 +12,15 @@ const simpleNumber = (num) => {
 export default () => {
   const result = [];
 
-  const minNumber = 1; // минимальное число
-  const maxNumber = 100; // максимальное число
-  const numberQuestion = 3; // Количество вопросов
+  const minNumber = 1;
+  const maxNumber = 100;
 
-  result.push('Answer "yes" if given number is prime. Otherwise answer "no".');
-  for (let i = 1; i <= numberQuestion; i += 1) {
-    const num = randomNumber(minNumber, maxNumber);
-    result.push(num); // вопрос пользователю
-    result.push(simpleNumber(num)); // вопрос пользователю
+  const gameQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  for (let i = 0; i < numberQuestion(); i += 1) {
+    const num = randomNumber(maxNumber, minNumber);
+    result[i] = [];
+    result[i].push(num);
+    result[i].push(simpleNumber(num));
   }
-  startGame(result);
+  startGame(gameQuestion, result);
 };

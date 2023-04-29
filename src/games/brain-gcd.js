@@ -1,4 +1,4 @@
-import startGame from '../index.js';
+import { startGame, numberQuestion, randomNumber } from '../index.js';
 
 const greatestCD = (num1, num2) => {
   let min = 0;
@@ -25,15 +25,15 @@ const greatestCD = (num1, num2) => {
 export default () => {
   const result = [];
 
-  const maxNumber = 30; // Максимальное число для вычисления
-  const numberQuestion = 3; // Количество вопросов
+  const maxNumber = 30;
 
-  result.push('Find the greatest common divisor of given numbers.');
-  for (let i = 1; i <= numberQuestion; i += 1) {
-    const num1 = Math.round(Math.random() * maxNumber); // получаем случайное число num1
-    const num2 = Math.round(Math.random() * maxNumber); // получаем случайное число num2
-    result.push(`${num1} ${num2}`); // вопрос пользователю
-    result.push(greatestCD(num1, num2)); // вопрос пользователю
+  const gameQuestion = 'Find the greatest common divisor of given numbers.';
+  for (let i = 0; i < numberQuestion(); i += 1) {
+    const num1 = randomNumber(maxNumber);
+    const num2 = randomNumber(maxNumber);
+    result[i] = [];
+    result[i].push(`${num1} ${num2}`);
+    result[i].push(greatestCD(num1, num2));
   }
-  startGame(result);
+  startGame(gameQuestion, result);
 };

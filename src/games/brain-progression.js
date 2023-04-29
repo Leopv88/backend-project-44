@@ -1,6 +1,4 @@
-import startGame from '../index.js';
-
-const randomNumber = (min, max) => Math.round(Math.random() * (max - min) + min);
+import { startGame, numberQuestion, randomNumber } from '../index.js';
 
 const progression = (firstNumber, lenght, step) => {
   const array = [];
@@ -13,28 +11,27 @@ const progression = (firstNumber, lenght, step) => {
 
 export default () => {
   const result = [];
-  const maxNumber = 10; // максимальное начальное значение последовательности
-  const minLengthArray = 5; // минимальная длинна последовательности
-  const maxLengthArray = 10; // максимальная длинна последовательности
-  const minStep = 1; // минимальный шаг последовательности
-  const maxStep = 5; // максимальный шаг последовательности
+  const maxNumber = 10;
+  const minLengthArray = 5;
+  const maxLengthArray = 10;
+  const minStep = 1;
+  const maxStep = 5;
   let firstNumber = 0;
   let lenght = 0;
   let step = 0;
-  const numberQuestion = 3; // Количество вопросов
 
-  result.push('What number is missing in the progression?');
-  for (let i = 1; i <= numberQuestion; i += 1) {
-    firstNumber = Math.round(Math.random() * maxNumber);
-    lenght = randomNumber(minLengthArray, maxLengthArray);
-    step = randomNumber(minStep, maxStep);
+  const gameQuestion = 'What number is missing in the progression?';
+  for (let i = 0; i < numberQuestion(); i += 1) {
+    firstNumber = randomNumber(maxNumber);
+    lenght = randomNumber(maxLengthArray, minLengthArray);
+    step = randomNumber(maxStep, minStep);
     const array = progression(firstNumber, lenght, step);
-    const item = randomNumber(1, array.length); // какой по номер в последовательности будет удален
+    const item = randomNumber(array.length, 1);
     const temp = array[item - 1];
     array[item - 1] = '..';
-
-    result.push(`${array.join(' ')}`); // вопрос пользователю
-    result.push(temp); // вопрос пользователю
+    result[i] = [];
+    result[i].push(`${array.join(' ')}`);
+    result[i].push(temp);
   }
-  startGame(result);
+  startGame(gameQuestion, result);
 };
