@@ -1,21 +1,20 @@
-import { startGame, numberQuestion, randomNumber } from '../index.js';
+import { startGame, QUESTIONS_COUNT, getRandomNumber } from '../index.js';
 
-const parityCheck = (num) => {
-  const result = num % 2 === 0 ? 'yes' : 'no';
-  return result;
-};
+const isEven = (num) => num % 2 === 0;
 
 export default () => {
-  const result = [];
+  const gameQuestions = [];
 
   const maxNumber = 1000;
 
-  const gameQuestion = 'Answer "yes" if the number is even, otherwise answer "no".';
-  for (let i = 0; i < numberQuestion(); i += 1) {
-    const num = randomNumber(maxNumber);
-    result[i] = [];
-    result[i].push(num);
-    result[i].push(parityCheck(num));
+  const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
+  for (let i = 0; i < QUESTIONS_COUNT; i += 1) {
+    const num = getRandomNumber(maxNumber);
+    const expectedAnswer = isEven(num) ? 'yes' : 'no';
+    gameQuestions[i] = [
+      num,
+      expectedAnswer,
+    ];
   }
-  startGame(gameQuestion, result);
+  startGame(gameRules, gameQuestions);
 };

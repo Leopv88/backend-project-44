@@ -1,6 +1,6 @@
-import { startGame, numberQuestion, randomNumber } from '../index.js';
+import { startGame, QUESTIONS_COUNT, getRandomNumber } from '../index.js';
 
-const simpleNumber = (num) => {
+const isSimpleNumber = (num) => {
   for (let i = (num - 1); i > 1; i -= 1) {
     if (num % i === 0) {
       return 'no';
@@ -10,17 +10,18 @@ const simpleNumber = (num) => {
 };
 
 export default () => {
-  const result = [];
+  const gameQuestions = [];
 
   const minNumber = 1;
   const maxNumber = 100;
 
-  const gameQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  for (let i = 0; i < numberQuestion(); i += 1) {
-    const num = randomNumber(maxNumber, minNumber);
-    result[i] = [];
-    result[i].push(num);
-    result[i].push(simpleNumber(num));
+  const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  for (let i = 0; i < QUESTIONS_COUNT; i += 1) {
+    const num = getRandomNumber(maxNumber, minNumber);
+    gameQuestions[i] = [
+      num,
+      isSimpleNumber(num),
+    ];
   }
-  startGame(gameQuestion, result);
+  startGame(gameRules, gameQuestions);
 };

@@ -1,4 +1,4 @@
-import { startGame, numberQuestion, randomNumber } from '../index.js';
+import { startGame, QUESTIONS_COUNT, getRandomNumber } from '../index.js';
 
 const calc = (num1, num2, operator) => {
   if (operator === '*') {
@@ -7,21 +7,25 @@ const calc = (num1, num2, operator) => {
   if (operator === '-') {
     return num1 - num2;
   }
-  return num1 + num2;
+  if (operator === '+') {
+    return num1 + num2;
+  }
+  return null;
 };
 
 export default () => {
-  const result = [];
+  const gameQuestions = [];
   const arrayOperator = ['*', '-', '+'];
   const maxNumber = 10;
-  const gameQuestion = 'What is the result of the expression?';
-  for (let i = 0; i < numberQuestion(); i += 1) {
-    const operator = arrayOperator[Math.floor(Math.random() * arrayOperator.length)];
-    const num1 = randomNumber(maxNumber);
-    const num2 = randomNumber(maxNumber);
-    result[i] = [];
-    result[i].push(`${num1} ${operator} ${num2}`);
-    result[i].push(calc(num1, num2, operator));
+  const gameRules = 'What is the result of the expression?';
+  for (let i = 0; i < QUESTIONS_COUNT; i += 1) {
+    const operator = arrayOperator[getRandomNumber(arrayOperator.length - 1)];
+    const num1 = getRandomNumber(maxNumber);
+    const num2 = getRandomNumber(maxNumber);
+    gameQuestions[i] = [
+      `${num1} ${operator} ${num2}`,
+      calc(num1, num2, operator),
+    ];
   }
-  startGame(gameQuestion, result);
+  startGame(gameRules, gameQuestions);
 };

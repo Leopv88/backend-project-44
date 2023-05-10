@@ -1,6 +1,6 @@
-import { startGame, numberQuestion, randomNumber } from '../index.js';
+import { startGame, QUESTIONS_COUNT, getRandomNumber } from '../index.js';
 
-const progression = (firstNumber, lenght, step) => {
+const getProgression = (firstNumber, lenght, step) => {
   const array = [];
   array[0] = firstNumber;
   for (let i = 1; i < lenght; i += 1) {
@@ -10,28 +10,26 @@ const progression = (firstNumber, lenght, step) => {
 };
 
 export default () => {
-  const result = [];
+  const gameQuestions = [];
   const maxNumber = 10;
   const minLengthArray = 5;
   const maxLengthArray = 10;
   const minStep = 1;
   const maxStep = 5;
-  let firstNumber = 0;
-  let lenght = 0;
-  let step = 0;
 
-  const gameQuestion = 'What number is missing in the progression?';
-  for (let i = 0; i < numberQuestion(); i += 1) {
-    firstNumber = randomNumber(maxNumber);
-    lenght = randomNumber(maxLengthArray, minLengthArray);
-    step = randomNumber(maxStep, minStep);
-    const array = progression(firstNumber, lenght, step);
-    const item = randomNumber(array.length, 1);
-    const temp = array[item - 1];
-    array[item - 1] = '..';
-    result[i] = [];
-    result[i].push(`${array.join(' ')}`);
-    result[i].push(temp);
+  const gameRules = 'What number is missing in the progression?';
+  for (let i = 0; i < QUESTIONS_COUNT; i += 1) {
+    const firstNumber = getRandomNumber(maxNumber);
+    const lenght = getRandomNumber(maxLengthArray, minLengthArray);
+    const step = getRandomNumber(maxStep, minStep);
+    const array = getProgression(firstNumber, lenght, step);
+    const item = getRandomNumber(array.length - 1);
+    const rightAnswer = array[item];
+    array[item] = '..';
+    gameQuestions[i] = [
+      `${array.join(' ')}`,
+      rightAnswer
+    ];
   }
-  startGame(gameQuestion, result);
+  startGame(gameRules, gameQuestions);
 };
