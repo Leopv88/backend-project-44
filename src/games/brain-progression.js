@@ -28,7 +28,7 @@ export default () => {
     array[item] = '..';
     gameQuestions[i] = [
       `${array.join(' ')}`,
-      rightAnswer
+      rightAnswer,
     ];
   }
   startGame(gameRules, gameQuestions);
