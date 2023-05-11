@@ -3,10 +3,10 @@ import { startGame, QUESTIONS_COUNT, getRandomNumber } from '../index.js';
 const isSimpleNumber = (num) => {
   for (let i = (num - 1); i > 1; i -= 1) {
     if (num % i === 0) {
-      return 'no';
+      return false;
     }
   }
-  return 'yes';
+  return true;
 };
 
 export default () => {
@@ -18,9 +18,10 @@ export default () => {
   const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   for (let i = 0; i < QUESTIONS_COUNT; i += 1) {
     const num = getRandomNumber(maxNumber, minNumber);
+    const expectedAnswer = isSimpleNumber(num) ? 'yes' : 'no';
     gameQuestions[i] = [
       num,
-      isSimpleNumber(num),
+      expectedAnswer,
     ];
   }
   startGame(gameRules, gameQuestions);

@@ -1,16 +1,16 @@
 import { startGame, QUESTIONS_COUNT, getRandomNumber } from '../index.js';
 
 const calc = (num1, num2, operator) => {
-  if (operator === '*') {
-    return num1 * num2;
+  switch (operator) {
+    case '*':
+      return num1 * num2;
+    case '-':
+      return num1 - num2;
+    case '+':
+      return num1 + num2;
+    default:
+      return null;
   }
-  if (operator === '-') {
-    return num1 - num2;
-  }
-  if (operator === '+') {
-    return num1 + num2;
-  }
-  return null;
 };
 
 export default () => {

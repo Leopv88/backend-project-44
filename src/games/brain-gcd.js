@@ -1,6 +1,10 @@
 import { startGame, QUESTIONS_COUNT, getRandomNumber } from '../index.js';
 
-const getGCD = (num1, num2, divider = num1 > num2 ? num1 : num2) => {
+const getGCD = (num1, num2, divider = null) => {
+  if (divider === null) {
+    const newDivider = num1 > num2 ? num1 : num2;
+    return getGCD(num1, num2, newDivider);
+  }
   if (num1 % divider === 0 && num2 % divider === 0) {
     return divider;
   }
