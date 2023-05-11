@@ -11,10 +11,10 @@ export default () => {
   for (let i = 0; i < QUESTIONS_COUNT; i += 1) {
     const num = getRandomNumber(maxNumber);
     const expectedAnswer = isEven(num) ? 'yes' : 'no';
-    gameQuestions[i] = [
+    gameQuestions.push([
       num,
       expectedAnswer,
-    ];
+    ]);
   }
   startGame(gameRules, gameQuestions);
 };

@@ -22,10 +22,10 @@ export default () => {
     const operator = arrayOperator[getRandomNumber(arrayOperator.length - 1)];
     const num1 = getRandomNumber(maxNumber);
     const num2 = getRandomNumber(maxNumber);
-    gameQuestions[i] = [
+    gameQuestions.push([
       `${num1} ${operator} ${num2}`,
       calc(num1, num2, operator),
-    ];
+    ]);
   }
   startGame(gameRules, gameQuestions);
 };

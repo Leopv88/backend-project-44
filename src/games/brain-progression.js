@@ -26,10 +26,10 @@ export default () => {
     const hiddenIndex = getRandomNumber(progression.length - 1);
     const expectedAnswer = progression[hiddenIndex];
     progression[hiddenIndex] = '..';
-    gameQuestions[i] = [
+    gameQuestions.push([
       `${progression.join(' ')}`,
       expectedAnswer,
-    ];
+    ]);
   }
   startGame(gameRules, gameQuestions);
 };

@@ -20,10 +20,10 @@ export default () => {
   for (let i = 0; i < QUESTIONS_COUNT; i += 1) {
     const num1 = getRandomNumber(maxNumber);
     const num2 = getRandomNumber(maxNumber);
-    gameQuestions[i] = [
+    gameQuestions.push([
       `${num1} ${num2}`,
       getGCD(num1, num2),
-    ];
+    ]);
   }
   startGame(gameRules, gameQuestions);
 };
